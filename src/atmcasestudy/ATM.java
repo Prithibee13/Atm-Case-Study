@@ -10,6 +10,7 @@ package atmcasestudy;
  */
 public class ATM 
 {
+    boolean userAuthenticated;
     public ATM()
     {
         

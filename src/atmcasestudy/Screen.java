@@ -20,8 +20,8 @@ public class Screen
         System.out.println(message);
     }
     
-    public void displayDollerMessage(String message)
+    public void displayDollerMessage(double amount)
     {
-        System.out.println(message);
+        System.out.println("$%.2f" + amount);
     }
 }
