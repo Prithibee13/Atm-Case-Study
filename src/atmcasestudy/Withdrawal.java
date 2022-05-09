@@ -77,4 +77,53 @@ public class Withdrawal extends Transaction {
         
         
     }
+    
+    private int displayMenuOfAmounts()
+    {
+        int userChoice = 0;
+        
+        Screen screen = getScreen();
+        
+        int[] amounts = {0,20,40,60,100,200};
+        
+        while(userChoice == 0)
+        {
+            screen.displayMessageLine( "\nWithdrawal Menu:");
+            screen.displayMessageLine( "1 - 20" );
+            
+            screen.displayMessageLine( "2 - 40" );
+            
+            
+            screen.displayMessageLine( "3 - 60" );
+            
+            
+            screen.displayMessageLine( "4 - 100" );
+            
+            screen.displayMessageLine( "5 - 200" );
+            
+            
+            screen.displayMessageLine(  "\nChoose a withdrawal amount: " ) ;
+            
+            int input = keypad.getInput();
+            
+            switch( input )
+            {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                    userChoice = amounts[input];
+                    break;
+                case CANCELED :
+                    userChoice = CANCELED;
+                    break;
+                default: 
+                   screen.displayMessageLine(  "\nnInvalid selection. Try again. " ) ;
+                
+                    
+            }
+        }
+        return userChoice;
+    }
 }
